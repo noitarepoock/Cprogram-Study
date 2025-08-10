@@ -75,6 +75,21 @@ int main(){
     printf("another string : %s", my_strcpy(str, "kiwi"));
     */          //strcpy와 같은 기능을 하는 함수 직접 만들기
 
+    char str1[15], str2[15];
+    int i = 5;
+
+    printf("string : ");
+    scanf("%s", str2);
+
+    strcpy(str1, str2);
+    if(strlen(str2) > 5){
+        while(str2[i] != '\0'){
+            str2[i] = '*';
+            i++;
+        }
+    }
+
+    printf("oriString : %s, hiddenString : %s", str1, str2);
 
     return 0;
 }
