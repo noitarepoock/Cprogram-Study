@@ -2,6 +2,9 @@
 #include <string.h>
 
 char *my_strcpy(char *pd, char *ps);
+char *my_strcat(char *pd, char *ps);
+int my_strlen(char *ps);
+int my_strcmp(char* pd, char *ps);
 
 int main(){
     /*
@@ -72,6 +75,7 @@ int main(){
     printf("another string : %s", my_strcpy(str, "kiwi"));
     */          //strcpy와 같은 기능을 하는 함수 직접 만들기
 
+
     return 0;
 }
 
@@ -87,4 +91,43 @@ char *my_strcpy(char *pd, char *ps){
     *pd = '\0';
 
     return po;
+}
+
+
+char *my_strcat(char *pd, char *ps){
+    char *po = pd;
+
+    while(*pd != '\0'){
+        pd++;
+    }                           //null값 까지 이동하고 뒤에 붙임.
+
+    while(*ps != '\0'){
+        *pd = *ps;
+        pd++;
+        ps++;
+    }
+    *pd ='\0';
+
+    return po;
+}
+
+int my_strlen(char *ps){
+    int cnt = 0;
+    while(*ps != '\0'){
+        cnt++;
+        ps++;
+    }
+
+    return cnt;
+}
+
+int my_strcmp(char* pd, char *ps){
+    while((*pd == *ps) && (*pd != '\0')){
+        pd++;
+        ps++;
+    }
+
+    if(*pd > *ps) return 1;
+    else if(*pd < *ps) return -1;
+    else return 0;
 }
