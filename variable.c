@@ -38,6 +38,20 @@ int main() {
 
     // printf("after calling function a : %d\n", a);
 
+
+    
+    int i;
+
+    printf("using auto function\n");
+    for(i = 0; i < 3; i++){
+        auto_func();
+    }
+
+    printf("using static function\n");
+    for(i = 0; i < 3; i++){
+        static_func();
+    }
+
     return 0;
 }
 
