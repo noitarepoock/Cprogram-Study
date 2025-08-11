@@ -2,6 +2,12 @@
 #include <string.h>
 
 void assign(void);
+void assign10(void);
+void assign20(void);
+void auto_func(void);
+void static_func(void);
+
+// int a;          //global variable a
 
 int main() {
     // auto int a = 20;        //in main function variable a
@@ -10,18 +16,27 @@ int main() {
     // printf("main function a : %d\n", a);
 
 
-    int a = 10, b = 20;
+    // int a = 10, b = 20;
 
-    printf("before exchanging a, b : %d %d\n", a ,b);
-    {
-        int tmp;                //Can use only in this block
+    // printf("before exchanging a, b : %d %d\n", a ,b);
+    // {
+    //     int tmp;                //Can use only in this block
 
-        tmp = a;
-        a = b;
-        b = tmp;
-    }
-    printf("after exchanging a, b : %d %d\n", a, b);
-    //printf("tmp : %d", tmp);
+    //     tmp = a;
+    //     a = b;
+    //     b = tmp;
+    // }
+    // printf("after exchanging a, b : %d %d\n", a, b);
+    // //printf("tmp : %d", tmp);
+
+
+
+    // printf("before call function a : %d\n", a);
+
+    // assign20();
+    // assign10();
+
+    // printf("after calling function a : %d\n", a);
 
     return 0;
 }
@@ -31,4 +46,28 @@ void assign(void){
 
     a = 10;
     printf("assign function a : %d\n", a);
+}
+
+// void assign10(void){
+//     a = 10;
+// }
+void assign20(void)
+{
+    int a;     //local variable a can use only in this function
+
+    a = 20;
+}
+
+void auto_func(void){
+    auto int a = 0;
+
+    a++;
+    printf("%d\n", a);
+}
+
+void static_func(void){
+    static int a;
+
+    a++;
+    printf("%d\n", a);
 }
