@@ -40,17 +40,27 @@ int main() {
 
 
     
-    int i;
+    // int i;
 
-    printf("using auto function\n");
-    for(i = 0; i < 3; i++){
-        auto_func();
+    // printf("using auto function\n");
+    // for(i = 0; i < 3; i++){
+    //     auto_func();
+    // }
+
+    // printf("using static function\n");
+    // for(i = 0; i < 3; i++){
+    //     static_func();
+    // }
+
+
+    register int i;         //store variable in register in CPU
+    int sum = 0;
+
+    for(i = 1; i <= 10000; i++){
+        sum += i;
     }
 
-    printf("using static function\n");
-    for(i = 0; i < 3; i++){
-        static_func();
-    }
+    printf("%d\n", sum);
 
     return 0;
 }
