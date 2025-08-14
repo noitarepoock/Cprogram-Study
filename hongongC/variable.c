@@ -150,12 +150,12 @@ void input_data(int *pa, int *pb){
     printf("input two num : ");
     scanf("%d %d", pa, pb);
 }
-void swap_data(void){
-    int tmp;
-    tmp = a;
-    a = b;
-    b = tmp;
-}
+// void swap_data(void){            //13-2 Q4(도전 실전 예제)
+//     int tmp;
+//     tmp = a;
+//     a = b;
+//     b = tmp;
+// }
 void print_data(int a, int b){
     printf("output two num : %d, %d\n",a, b);
 }
