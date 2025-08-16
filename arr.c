@@ -76,17 +76,49 @@ int main(void){
     // }
 
 
-    int ary1[4] = {1, 2, 3, 4};
-    int ary2[4] = {11, 12, 13, 14};
-    int ary3[5] = {21, 22, 23, 24, 25};
-    int *pary[3] = {ary1, ary2, ary3};
+    // int ary1[4] = {1, 2, 3, 4};
+    // int ary2[4] = {11, 12, 13, 14};
+    // int ary3[5] = {21, 22, 23, 24, 25};
+    // int *pary[3] = {ary1, ary2, ary3};
 
-    for(int i = 0; i < 3; i++){
-        for(int j = 0 ; j < 5; j++){
-            printf("%5d", pary[i][j]);
-        }
-        printf("\n");
-    }
+    // for(int i = 0; i < 3; i++){
+    //     for(int j = 0 ; j < 5; j++){
+    //         printf("%5d", pary[i][j]);
+    //     }
+    //     printf("\n");
+    // }
+
+
+
+    // int ary[5][6] = {                                                                            //14-2 Q4 (도전 실전 예제)
+    //     {1, 2, 3, 4, 5}, {6, 7, 8, 9, 10}, {11, 12, 13, 14, 15}, {16, 17, 18, 19, 20}
+    // };
+
+    // int last = 0;
+    // for(int i = 0; i < 4; i++){
+    //     int sum = 0;
+    //     for(int j = 0; j < 5; j++){
+    //         sum += ary[i][j];
+    //         last += ary[i][j];
+    //     }
+    //     ary[i][5] = sum;
+    // }
+    // ary[4][5] = last;
+
+    // for(int j = 0; j < 5; j++){
+    //     int sum = 0;
+    //     for(int i = 0; i < 4; i++){
+    //         sum += ary[i][j];
+    //     }
+    //     ary[4][j] = sum;
+    // }
+
+    // for(int i = 0; i < 5; i++){
+    //     for(int j = 0; j < 6; j++){
+    //         printf("%5d", ary[i][j]);
+    //     }
+    //     printf("\n");
+    // }
 
     return 0;
 }
