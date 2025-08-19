@@ -1,6 +1,9 @@
 #include <stdio.h>
 #include <string.h>
 
+void swqp_ptr(char **ppa, char **ppb);
+void print_str(char **pps, int cnt);
+
 int main(void){
     // int score[3][4];
     // int total;
@@ -120,5 +123,61 @@ int main(void){
     //     printf("\n");
     // }
 
+
+
+
+    // int a = 10;
+    // int *pi;
+    // int **ppi;
+
+    // pi = &a;
+    // ppi = &pi;
+
+    // printf("--------------------------------------------\n");
+    // printf("변수     변숫값     &연산     *연산     **연산\n");
+    // printf("--------------------------------------------\n");
+    // printf("    a%12d%12u\n", a, &a);
+    // printf(" pi%12u%12u%12d\n",pi, &pi, *pi);
+    // printf("ppi%12u%12u%12u%12u\n", ppi, &ppi, *ppi, **ppi);
+    // printf("--------------------------------------------\n");
+
+
+
+    // char *pa = "success";
+    // char *pb = "failure";
+
+    // printf("pa -> %s, pb -> %s\n", pa, pb);
+    // swqp_ptr(&pa, &pb);
+
+    // printf("pa -> %s, pb -> %s\n", pa, pb);
+
+
+
+
+    // char *ptr_ary[] = {"eagle", "tiger", "lion", "squirrel"};
+    // int count;
+
+    // count = sizeof(ptr_ary) / sizeof(ptr_ary[0]);
+    // print_str(ptr_ary, count);
+
+    // printf("%c", ptr_ary[0][0]);
+
+
+    
+
     return 0;
 }
+
+void print_str(char **pps, int cnt){
+    for(int i = 0; i < cnt; i++){
+        printf("%s\n", pps[i]);
+    }
+}
+
+void swqp_ptr(char **ppa, char **ppb){
+    char *pt;
+    pt = *ppa;
+    *ppa = *ppb;
+    *ppb = pt;
+}
+
