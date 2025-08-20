@@ -4,6 +4,12 @@
 void swqp_ptr(char **ppa, char **ppb);
 void print_str(char **pps, int cnt);
 void print_ary(int (*pa)[4]);
+int sum(int a, int b);
+void func(int (*fp)(int, int));
+int mul(int a, int b);
+int max(int a, int b);
+void swaq(char *str, void *va, void *vb);
+
 
 int main(void){
     // int score[3][4];
@@ -179,15 +185,106 @@ int main(void){
 
 
 
-    int ary[3][4] = { {1, 2, 3, 4}, {5, 6, 7, 8}, {9, 10, 11, 12} };
+    // int ary[3][4] = { {1, 2, 3, 4}, {5, 6, 7, 8}, {9, 10, 11, 12} };
 
-    // print_ary(ary);
-    printf("%d\n", sizeof(&ary[0]));
-    printf("%d\n", sizeof(ary[0]));    
-    printf("%d\n", sizeof(ary));
-    printf("%d", sizeof(&ary[0][0]));
+    // // print_ary(ary);
+    // printf("%d\n", sizeof(&ary[0]));
+    // printf("%d\n", sizeof(ary[0]));    
+    // printf("%d\n", sizeof(ary));
+    // printf("%d", sizeof(&ary[0][0]));
+
+
+
+    // int (*fp)(int, int);
+    // int res;
+
+    // fp = sum;
+    // res = fp(10, 20);
+    // printf("result : %d\n", res);
+
+
+
+    // int sel;
+
+    // printf("01 sum of two num\n");
+    // printf("02 multi of two num\n");
+    // printf("03 find bigger num\n");
+    // printf("sel want menu : ");
+    // scanf("%d", &sel);
+
+    // switch(sel){
+    //     case 1: func(sum); break;
+    //     case 2: func(mul); break;
+    //     case 3 : func(max); break;
+    // }
+
+
+
+    // int a = 10;
+    // double b = 3.5;
+    // void *vp;
+
+    // vp = &a;
+    // printf("a : %d\n", *(int *)vp);
+
+    // vp = &b;;
+    // printf("b : %.1lf", *(double*)vp);
+
+
+    int age1, age2;
+    double height1, height2;
+
+    printf("1st persn's age n height : ");
+    scanf("%d %lf", &age1, &height1);
+    printf("2nd persn's age n height : ");
+    scanf("%d %lf", &age2, &height2);
+
+    swaq("int", &age1, &age2);
+    swaq("double", &height1, &height2);
+
+    printf("1st persn's age n height : %d, %.1lf\n", age1, height2);
+    printf("2nd persn's age n height : %d, %.1lf", age2, height2);
+
+    
 
     return 0;
+}
+
+void swaq(char *str, void *va, void *vb){
+    
+    if(str = "int"){
+        int *tmp;
+        tmp = va;
+        va = vb;
+        vb = tmp;
+    }else if(str = "double"){
+        double *tmp;
+        tmp = va;
+        va = vb;
+        vb = tmp;
+    }
+}
+
+int max(int a, int b){
+    return a > b ? a : b;
+}
+
+int sum(int a, int b){
+    return a + b;
+}
+
+void func(int (*fp)(int, int))
+{
+    int i, j;
+    printf("input two num : ");
+    scanf("%d %d", &i, &j);
+    int res = fp(i, j);
+    printf("result : %d\n", res);
+}
+
+int mul(int a, int b)
+{
+    return a * b;
 }
 
 void print_str(char **pps, int cnt){
