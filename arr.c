@@ -231,37 +231,36 @@ int main(void){
     // printf("b : %.1lf", *(double*)vp);
 
 
-    int age1, age2;
-    double height1, height2;
+    // int age1, age2;                                          //15-2 Q4(도전 실전 예제)
+    // double height1, height2;
 
-    printf("1st persn's age n height : ");
-    scanf("%d %lf", &age1, &height1);
-    printf("2nd persn's age n height : ");
-    scanf("%d %lf", &age2, &height2);
+    // printf("1st persn's age n height : ");
+    // scanf("%d %lf", &age1, &height1);
+    // printf("2nd persn's age n height : ");
+    // scanf("%d %lf", &age2, &height2);
 
-    swaq("int", &age1, &age2);
-    swaq("double", &height1, &height2);
+    // swaq("int", &age1, &age2);
+    // swaq("double", &height1, &height2);
 
-    printf("1st persn's age n height : %d, %.1lf\n", age1, height2);
-    printf("2nd persn's age n height : %d, %.1lf", age2, height2);
+    // printf("1st persn's age n height : %d, %.1lf\n", age1, height1);
+    // printf("2nd persn's age n height : %d, %.1lf", age2, height2);
 
     
 
     return 0;
 }
 
-void swaq(char *str, void *va, void *vb){
-    
-    if(str = "int"){
-        int *tmp;
-        tmp = va;
-        va = vb;
-        vb = tmp;
-    }else if(str = "double"){
-        double *tmp;
-        tmp = va;
-        va = vb;
-        vb = tmp;
+void swaq(char *str, void *vpa, void *vpb){
+    if(strcmp(str, "int") == 0){
+        int tmp;
+        tmp = *(int *)vpa;
+        *(int *)vpa = *(int *)vpb;
+        *(int *)vpb = tmp;
+    }else if(strcmp(str, "double") == 0){
+        double tmp;
+        tmp = *(double *)vpa;
+        *(double *)vpa = *(double *)vpb;
+        *(double *)vpb = tmp;
     }
 }
 
