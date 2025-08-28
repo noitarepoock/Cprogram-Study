@@ -2,6 +2,13 @@
 #include <string.h>
 #include <stdlib.h>
 
+void print_str(char **ps){
+    while(*ps != NULL){
+        printf("%s\n", *ps);
+        ps++;
+    }
+}
+
 int main(void){
     // int *pi;
     // double *pd;
@@ -42,29 +49,61 @@ int main(void){
 
 
 
-    int *pi;
-    int size = 5;
-    int count = 0;
-    int num;
+    // int *pi;
+    // int size = 5;
+    // int count = 0;
+    // int num;
+    // int i;
+
+    // pi = (int *)calloc(size, sizeof(int));      //5개의 저장 공간 할당
+    // while(1){
+    //     printf("양수 입력 => ");
+    //     scanf("%d", &num);
+    //     if(num <= 0) break;
+    //     if(count == size){
+    //         size += 5;
+    //         pi = (int *)realloc(pi, size * sizeof(int));
+    //     }
+    //     pi[count++] = num;
+    // }
+
+    // printf("memory : %zu\n", sizeof(pi));
+    // for(i = 0; i < count; i++){
+    //     printf("%5d", pi[i]);
+    // }
+    // free(pi);
+
+
+    // char tmp[80];
+    // char *str[3];
+    
+    // for(int i = 0; i < 3; i++){
+    //     printf("string : ");
+    //     gets(tmp);
+    //     str[i] = (char *)malloc(strlen(tmp) + 1);
+    //     strcpy(str[i], tmp);
+    // }
+    // for(int i = 0; i < 3; i++){
+    //     printf("%s\n", str[i]);
+    // }
+    // for(int i = 0 ; i < 3; i++){
+    //     free(str[i]);
+    // }
+
+
+
+
+    char tmp[80];
+    char *str[21] = {0};
     int i;
 
-    pi = (int *)calloc(size, sizeof(int));      //5개의 저장 공간 할당
-    while(1){
-        printf("양수 입력 => ");
-        scanf("%d", &num);
-        if(num <= 0) break;
-        if(count == size){
-            size += 5;
-            pi = (int *)realloc(pi, size * sizeof(int));
-        }
-        pi[count++] = num;
+    while(i < 20){
+        printf("string : ");
+        gets(tmp);
+        if(strcmp(tmp, "end") == 0) break;
+        str[i] = (char *)malloc(strlen(tmp) + 1);
+        strcpy(str[i], tmp);
     }
-
-    printf("memory : %zu\n", sizeof(pi));
-    for(i = 0; i < count; i++){
-        printf("%5d", pi[i]);
-    }
-    free(pi);
 
     return 0;
 }
