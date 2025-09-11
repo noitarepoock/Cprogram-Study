@@ -26,49 +26,90 @@
 //     double grade;
 // };
 
-struct student{
-    int id;
-    char name[20];
-    double grade;
-};
+// struct student{
+//     int id;
+//     char name[20];
+//     double grade;
+// };
 
-struct vision{
-    double left;
-    double right;
-};
+// struct vision{
+//     double left;
+//     double right;
+// };
 
-struct score{
-    int kor;
-    int eng;
-    int math;
-};
+// struct score{
+//     int kor;
+//     int eng;
+//     int math;
+// };
 
 // struct cracker{              17-1 Q2
 //     int price;
 //     int calories;
 // };
 
-struct address{
+// struct address{
+//     char name[20];
+//     int age;
+//     char tel[20];
+//     char addr[80];
+// };
+
+// struct list{
+//     int num;
+//     struct list *next;
+// };
+
+struct profile{             //17-2 Q4(도전 실전 예제)
+    int sid;
     char name[20];
-    int age;
-    char tel[20];
-    char addr[80];
+    int kor, eng, math;
+    double avg;
+    char grade;
 };
 
-struct list{
-    int num;
-    struct list *next;
-};
+// struct student{
+//     int num;
+//     double grade;
+// };
+// typedef struct student Student;
+// void print_data(Student *ps){
+//     printf("student ID : %d\n", ps->num);
+//     printf("grade : %.1lf", ps->grade);
+// }
 
-struct vision exchange(struct vision robot){
-    double tmp;
+// union student{
+//     int num;
+//     double grade;
+// };
 
-    tmp = robot.left;
-    robot.left = robot.right;
-    robot.right = tmp;
+// enum season {SPRING, SUMMER, FALL, WINTER};
 
-    return robot;
-}
+// struct vision exchange(struct vision robot){
+//     double tmp;
+
+//     tmp = robot.left;
+//     robot.left = robot.right;
+//     robot.right = tmp;
+
+//     return robot;
+// }
+
+// void sorting(struct profile s[5]){           //17-2 Q4(도전 실전 예제)
+//     struct profile res[5];
+//     double max = s[0].avg;
+//     for(int i = 0 ; i < 5; i++){
+//         for(int j = i; j < 5; j++){
+//             if(s[j].avg >= s[i].avg){
+//                 struct profile tmp;
+//                 tmp = s[j];
+//                 s[j] = s[i];
+//                 s[i] = tmp;
+//             }
+//         }
+//     }
+
+// }
 
 int main(){
     // struct student s;
@@ -167,22 +208,83 @@ int main(){
 
 
 
-    struct list a = {10, 0}, b = {20, 0}, c = {30, 0};
-    struct list *head = &a, *current;
+    // struct list a = {10, 0}, b = {20, 0}, c = {30, 0};
+    // struct list *head = &a, *current;
 
-    a.next = &b;
-    b.next = &c;
+    // a.next = &b;
+    // b.next = &c;
 
-    printf("head->num : %d\n", head->num);
-    printf("head->next->num : %d\n", head->next->num);
+    // printf("head->num : %d\n", head->num);
+    // printf("head->next->num : %d\n", head->next->num);
 
-    printf("list all : ");
-    current = head;
-    while(current != NULL){
-        printf("%d ", current -> num);
-        current = current->next;
-    }
-    printf("\n");
+    // printf("list all : ");
+    // current = head;
+    // while(current != NULL){
+    //     printf("%d ", current -> num);
+    //     current = current->next;
+    // }
+    // printf("\n");
+
+
+
+    // union student s1 = {315};
+
+    // printf("sid : %d\n", s1.num);
+    // s1.grade = 4.4;
+    // printf("grade : %.1lf\n", s1.grade);
+    // printf("sid : %d\n", s1.num);
+
+
+
+    // enum season ss;
+    // char *pc = NULL;
+
+    // ss = SPRING;
+    // switch(ss){
+    //     case SPRING:
+    //         pc = "inline"; break;
+    //     case SUMMER:
+    //         pc = "swimming"; break;
+    //     case FALL:
+    //         pc = "trip"; break;
+    //     case WINTER:
+    //         pc = "skiing"; break;
+    // }
+    // printf("나의 레저 활동 : %s\n", pc);
+
+
+
+    // Student s1 = {315, 4.2};
+    // print_data(&s1);
+
+
+
+    // struct profile s[5];                 //17-2 Q4(도전 실전 예제)
+
+    // for(int i = 0 ; i < 5; i++){
+    //     printf("StudentID : ");
+    //     scanf("%d", &s[i].sid);
+    //     printf("name : ");
+    //     scanf("%s", s[i].name);
+    //     printf("kor, eng, math : ");
+    //     scanf("%d%d%d", &s[i].kor, &s[i].eng, &s[i].math);
+    //     s[i].avg = (s[i].kor + s[i].eng + s[i].math) / 3.0;
+    //     if(s[i].avg >= 90.0) s[i].grade = 'A';
+    //     else if(s[i].avg >= 80) s[i].grade = 'B';
+    //     else if(s[i].avg >= 70) s[i].grade = 'C';
+    //     else s[i].grade = 'F';
+    // }
+    // printf("# Data of before sorting\n");
+    // for(int i = 0; i < 5; i++){
+    //     printf("%5d%10s%5d%5d%5d%7d   %.1lf%5c\n", s[i].sid, s[i].name, s[i].kor, s[i].eng, s[i].math, (s[i].kor+s[i].eng+s[i].math), s[i].avg, s[i].grade );
+    // }
+
+    // sorting(s);
+    // printf("# Data of after sorting\n");
+    // for(int i = 0; i < 5; i++){
+    //     printf("%5d%10s%5d%5d%5d%7d   %.1lf%5c\n", s[i].sid, s[i].name, s[i].kor, s[i].eng, s[i].math, (s[i].kor+s[i].eng+s[i].math), s[i].avg, s[i].grade );
+    // }
+    
 
     return 0;
 }
